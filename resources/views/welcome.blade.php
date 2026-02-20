@@ -76,7 +76,6 @@
 </head>
 <body class="bg-white antialiased" x-data="app()" x-init="init()">
     
-    <!-- Toast Notification -->
     <div 
         x-show="toast.show"
         x-transition:enter="transition ease-out duration-300 transform"
@@ -95,7 +94,7 @@
         </div>
     </div>
     
-    <!-- Product Detail Modal -->
+    
     <div 
         x-show="productDetailOpen"
         x-cloak
@@ -168,7 +167,6 @@
         </div>
     </div>
     
-    <!-- Order Success Modal -->
     <div 
         x-show="orderSuccessOpen"
         x-cloak
@@ -213,7 +211,6 @@
         </div>
     </div>
     
-    <!-- Top Marquee Bar (Hidden on inicio) -->
     <div x-show="currentRoute !== 'inicio'" class="bg-[#F0EBE0] overflow-hidden relative h-6">
         <div class="flex whitespace-nowrap marquee-content">
             <span class="inline-block text-[10px] font-bold uppercase tracking-[0.2em] py-1.5 px-8">
@@ -231,7 +228,6 @@
         </div>
     </div>
     
-    <!-- Global Navigation (Hidden on inicio) -->
     <nav x-show="currentRoute !== 'inicio'" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div class="max-w-screen-2xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -275,7 +271,6 @@
         </div>
     </nav>
     
-    <!-- Mobile Menu -->
     <div 
         x-show="mobileMenuOpen"
         x-transition:enter="transition ease-out duration-300"
@@ -308,7 +303,6 @@
         </div>
     </div>
     
-    <!-- Cart Drawer -->
     <div x-show="cartOpen" class="fixed inset-0 z-[60]" x-cloak>
         <div 
             @click="cartOpen = false"
@@ -384,18 +378,14 @@
         </div>
     </div>
     
-    <!-- ROUTE: Inicio (Netflix-Style Landing Page) -->
     <div x-show="currentRoute === 'inicio'" x-cloak>
         <section class="relative h-screen overflow-hidden">
-            <!-- Background Image with Dark Overlay -->
             <div class="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1558769132-cb1aea3c4e86?q=80&w=2400&auto=format&fit=crop" 
-                     alt="SS26 Drop" 
-                     class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1974&auto=format&fit=crop" 
+                     class="w-full h-full object-cover filter grayscale brightness-50">
                 <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
             </div>
             
-            <!-- Top Bar (Transparent) -->
             <div class="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
                 <h1 class="text-2xl md:text-3xl font-black tracking-tighter text-white">HFSTUDIOS</h1>
                 <button 
@@ -405,7 +395,6 @@
                 </button>
             </div>
             
-            <!-- Center Content (Netflix-Style) -->
             <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 pb-32">
                 <div class="max-w-3xl text-center">
                     <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white mb-6 leading-tight">
@@ -416,7 +405,6 @@
                         Streetwear premium. Ingresa tu correo para descubrir el catálogo.
                     </p>
                     
-                    <!-- The Netflix-Style Form -->
                     <form @submit.prevent="handleLandingSubmit()" novalidate class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
                         <input 
                             type="text" 
@@ -435,7 +423,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Nosotros -->
     <div x-show="currentRoute === 'nosotros'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="max-w-4xl mx-auto">
@@ -486,7 +473,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Contacto -->
     <div x-show="currentRoute === 'contacto'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="max-w-2xl mx-auto">
@@ -542,7 +528,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Catálogo -->
     <div x-show="currentRoute === 'catalogo'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="mb-12">
@@ -599,7 +584,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Registro -->
     <div x-show="currentRoute === 'registro'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="max-w-md mx-auto bg-white p-10 shadow-2xl">
@@ -650,7 +634,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Login -->
     <div x-show="currentRoute === 'login'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="max-w-md mx-auto bg-white p-10 shadow-2xl">
@@ -692,7 +675,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Perfil -->
     <div x-show="currentRoute === 'perfil'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="max-w-4xl mx-auto">
@@ -725,7 +707,6 @@
         </section>
     </div>
     
-    <!-- ROUTE: Admin Panel -->
     <div x-show="currentRoute === 'admin'" x-cloak>
         <section class="max-w-screen-2xl mx-auto px-6 py-20">
             <div class="mb-8 flex items-center justify-between">
@@ -784,7 +765,6 @@
         </section>
     </div>
     
-    <!-- Footer (Hidden on inicio) -->
     <footer x-show="currentRoute !== 'inicio'" class="bg-black text-white py-16">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -829,7 +809,6 @@
         </div>
     </footer>
     
-    <!-- Alpine.js App Logic -->
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('app', () => ({
